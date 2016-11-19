@@ -18,8 +18,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import sepr.patterns.Blackboard;
-import sepr.patterns.ui.Application;
 
+@SuppressWarnings("serial")
 public class Application extends JFrame implements ActionListener {
 	
 	protected Blackboard blackboard = null;

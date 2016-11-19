@@ -1,8 +1,6 @@
 package sepr.calculator.refactored;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
+@SuppressWarnings("serial")
 public class OperatorButton extends CalculatorButton {
 	
 	protected String symbol;

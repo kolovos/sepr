@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+@SuppressWarnings("serial")
 public abstract class CalculatorButton extends JButton {
 	
 	protected RefactoredCalculator calculator = null;

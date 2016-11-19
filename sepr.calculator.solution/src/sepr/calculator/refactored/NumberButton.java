@@ -2,6 +2,7 @@ package sepr.calculator.refactored;
 
 import javax.swing.JTextField;
 
+@SuppressWarnings("serial")
 public class NumberButton extends CalculatorButton {
 	
 	protected int number;

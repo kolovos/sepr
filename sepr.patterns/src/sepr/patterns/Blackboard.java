@@ -1,7 +1,5 @@
 package sepr.patterns;
 
-import java.util.ArrayList;
-
 public class Blackboard {
 	
 	protected String text = "";

@@ -23,6 +23,7 @@ import sepr.patterns.signleton.EventLog;
 
 
 
+@SuppressWarnings("serial")
 public class Application extends JFrame implements ActionListener {
 	
 	protected NonBlockingBlackboardFacade blackboardFacade;
