@@ -1,2 +1,2 @@
-# sepr
-Source code for my 2nd year UG Software Engineering Project lectures
+# Software Engineering Project (SEPR)
+Source code for my 2nd year undergraduate [Software Engineering Project (SEPR)](https://www.cs.york.ac.uk/modules/sepr.html) lectures.
