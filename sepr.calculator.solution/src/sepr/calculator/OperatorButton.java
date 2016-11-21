@@ -1,11 +1,11 @@
-package sepr.calculator.refactored;
+package sepr.calculator;
 
 @SuppressWarnings("serial")
 public class OperatorButton extends CalculatorButton {
 	
 	protected String symbol;
 	
-	public OperatorButton(String symbol, RefactoredCalculator calculator) {
+	public OperatorButton(String symbol, Calculator calculator) {
 		super(symbol, calculator);
 		this.symbol = symbol;
 	}

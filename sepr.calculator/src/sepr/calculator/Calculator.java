@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -33,7 +34,7 @@ public class Calculator extends JFrame {
 		JPanel operatorPanel = new JPanel();
 		operatorPanel.setLayout(new GridLayout(4, 4, 4, 4));
 		
-		Button button1 = new Button("1");
+		JButton button1 = new JButton("1");
 		button1.addActionListener(new ActionListener() {
 			
 			@Override
@@ -49,7 +50,7 @@ public class Calculator extends JFrame {
 		});
 		buttonPanel.add(button1);
 
-		Button button2 = new Button("2");
+		JButton button2 = new JButton("2");
 		button2.addActionListener(new ActionListener() {
 			
 			@Override
@@ -65,7 +66,7 @@ public class Calculator extends JFrame {
 		});
 		buttonPanel.add(button2);
 
-		Button button3 = new Button("3");
+		JButton button3 = new JButton("3");
 		button3.addActionListener(new ActionListener() {
 			
 			@Override
@@ -81,7 +82,7 @@ public class Calculator extends JFrame {
 		});
 		buttonPanel.add(button3);
 		
-		Button plusButton = new Button("+");
+		JButton plusButton = new JButton("+");
 		plusButton.addActionListener(new ActionListener() {
 			
 			@Override
@@ -112,7 +113,7 @@ public class Calculator extends JFrame {
 		});
 		operatorPanel.add(plusButton);
 
-		Button minusButton = new Button("-");
+		JButton minusButton = new JButton("-");
 		minusButton.addActionListener(new ActionListener() {
 			
 			@Override
@@ -143,7 +144,7 @@ public class Calculator extends JFrame {
 		});
 		operatorPanel.add(minusButton);	
 
-		Button equalsButton = new Button("=");
+		JButton equalsButton = new JButton("=");
 		equalsButton.addActionListener(new ActionListener() {
 			
 			@Override

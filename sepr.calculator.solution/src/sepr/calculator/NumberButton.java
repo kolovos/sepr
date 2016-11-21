@@ -1,4 +1,4 @@
-package sepr.calculator.refactored;
+package sepr.calculator;
 
 import javax.swing.JTextField;
 
@@ -7,7 +7,7 @@ public class NumberButton extends CalculatorButton {
 	
 	protected int number;
 	
-	public NumberButton(int number, RefactoredCalculator calculator) {
+	public NumberButton(int number, Calculator calculator) {
 		super(number + "", calculator);
 		this.number = number;
 	}

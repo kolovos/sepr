@@ -1,10 +1,7 @@
 package sepr.calculator;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -33,143 +30,13 @@ public class Calculator extends JFrame {
 		JPanel operatorPanel = new JPanel();
 		operatorPanel.setLayout(new GridLayout(4, 4, 4, 4));
 		
-		Button button1 = new Button("1");
-		button1.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent ae) {
-				if (display.getText().equals("0") || operator) {
-					display.setText("1");
-					operator = false;
-				}
-				else {
-					display.setText(display.getText() + "1");
-				}
-			}
-		});
-		buttonPanel.add(button1);
-
-		Button button2 = new Button("2");
-		button2.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent ae) {
-				if (display.getText().equals("0") || operator) {
-					display.setText("2");
-					operator = false;
-				}
-				else {
-					display.setText(display.getText() + "2");
-				}
-			}
-		});
-		buttonPanel.add(button2);
-
-		Button button3 = new Button("3");
-		button3.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent ae) {
-				if (display.getText().equals("0") || operator) {
-					display.setText("3");
-					operator = false;
-				}
-				else {
-					display.setText(display.getText() + "3");
-				}
-			}
-		});
-		buttonPanel.add(button3);
+		buttonPanel.add(new NumberButton(1, this));
+		buttonPanel.add(new NumberButton(2, this));
+		buttonPanel.add(new NumberButton(3, this));
 		
-		Button plusButton = new Button("+");
-		plusButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-
-				if (operator) {
-					lastOperator = "+";
-					return;
-				}
-				
-				if (lastOperator != null) {
-					if (lastOperator.equals("+")) {
-						total = total + Integer.parseInt(display.getText());
-						display.setText(total + "");
-					}
-					else if (lastOperator.equals("-")) {
-						total = total - Integer.parseInt(display.getText());
-						display.setText(total + "");
-					}
-				}
-				else {
-					total = Integer.parseInt(display.getText());
-				}
-				
-				operator = true;				
-				lastOperator = "+";
-			}
-		});
-		operatorPanel.add(plusButton);
-
-		Button minusButton = new Button("-");
-		minusButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				
-				if (operator) {
-					lastOperator = "-";
-					return;
-				}
-				
-				if (lastOperator != null) {
-					if (lastOperator.equals("+")) {
-						total = total + Integer.parseInt(display.getText());
-						display.setText(total + "");
-					}
-					else if (lastOperator.equals("-")) {
-						total = total - Integer.parseInt(display.getText());
-						display.setText(total + "");						
-					}
-				}
-				else {
-					total = Integer.parseInt(display.getText());
-				}
-				
-				operator = true;
-				lastOperator = "-";
-			}
-		});
-		operatorPanel.add(minusButton);	
-
-		Button equalsButton = new Button("=");
-		equalsButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				
-				if (operator) {
-					lastOperator = "-";
-					return;
-				}
-				
-				if (lastOperator != null) {
-					if (lastOperator.equals("+")) {
-						total = total + Integer.parseInt(display.getText());
-						display.setText(total + "");
-					}
-					else if (lastOperator.equals("-")) {
-						total = total - Integer.parseInt(display.getText());
-						display.setText(total + "");						
-					}
-				}
-				
-				operator = true;
-				lastOperator = null;
-			}
-		});
-		operatorPanel.add(equalsButton);			
+		operatorPanel.add(new OperatorButton("+", this));			
+		operatorPanel.add(new OperatorButton("-", this));			
+		operatorPanel.add(new OperatorButton("=", this));			
 		
 		JPanel contentPanel = new JPanel();
 		contentPanel.setLayout(new BorderLayout(4, 4));
@@ -182,4 +49,32 @@ public class Calculator extends JFrame {
 		this.setResizable(false);
 	}
 
+	public boolean isOperator() {
+		return operator;
+	}
+	
+	public void setOperator(boolean operator) {
+		this.operator = operator;
+	}
+	
+	public String getLastOperator() {
+		return lastOperator;
+	}
+	
+	public void setLastOperator(String lastOperator) {
+		this.lastOperator = lastOperator;
+	}
+	
+	public int getTotal() {
+		return total;
+	}
+	
+	public void setTotal(int total) {
+		this.total = total;
+	}
+	
+	public JTextField getDisplay() {
+		return display;
+	}
+	
 }
