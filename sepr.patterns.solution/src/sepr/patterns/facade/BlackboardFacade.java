@@ -19,7 +19,7 @@ public abstract class BlackboardFacade implements BlackboardListener {
 	}
 	
 	public void executeCommand(String text) {
-		delay(3000);
+		// delay(3000);
 		commandStack.execute(commandFactory.createCommand(blackboard, text));
 	}
 	

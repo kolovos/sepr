@@ -52,8 +52,13 @@ public class Application extends JFrame implements ActionListener {
 		if (commandTextField.getText().equals("clear")) {
 			blackboard.setText("");
 		}
-		else if (commandTextField.getText().equals("time")) {
-			blackboard.setText(blackboard.getText() + "\n" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+		else if (commandTextField.getText().startsWith("section ")) {
+			String what = commandTextField.getText().substring(8) + "\n" + "---";
+			blackboard.setText(blackboard.getText() + "\n" + what);
+		}
+		else if (commandTextField.getText().startsWith("newline")) {
+			String what = "\n";
+			blackboard.setText(blackboard.getText() + what);
 		}
 		else if (commandTextField.getText().startsWith("write ")) {
 			String what = commandTextField.getText().substring(6);

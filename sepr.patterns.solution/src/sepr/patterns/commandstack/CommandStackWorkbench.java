@@ -11,9 +11,9 @@ public class CommandStackWorkbench {
 		
 		System.err.println("Can undo = " + stack.canUndo());
 		
-		stack.execute(new WriteToBlackboardCommand(blackboard, "a"));
-		stack.execute(new WriteToBlackboardCommand(blackboard, "b"));
-		stack.execute(new WriteToBlackboardCommand(blackboard, "c"));
+		stack.execute(new AppendToBlackboardCommand(blackboard, "a"));
+		stack.execute(new AppendToBlackboardCommand(blackboard, "b"));
+		stack.execute(new AppendToBlackboardCommand(blackboard, "c"));
 		
 		System.err.println("Can undo = " + stack.canUndo());
 		
