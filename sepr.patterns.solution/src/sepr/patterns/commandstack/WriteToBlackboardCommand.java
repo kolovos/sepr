@@ -2,12 +2,12 @@ package sepr.patterns.commandstack;
 
 import sepr.patterns.Blackboard;
 
-public class AppendToBlackboardCommand implements Command {
+public class WriteToBlackboardCommand implements Command {
 	
 	protected String toAppend;
 	protected Blackboard blackboard;
 	
-	public AppendToBlackboardCommand(Blackboard blackboard, String toAppend) {
+	public WriteToBlackboardCommand(Blackboard blackboard, String toAppend) {
 		this.toAppend = toAppend;
 		this.blackboard = blackboard;
 	}

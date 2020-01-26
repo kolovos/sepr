@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -50,11 +52,11 @@ public class Application extends JFrame implements ActionListener {
 		if (commandTextField.getText().equals("clear")) {
 			blackboard.setText("");
 		}
-		else if (commandTextField.getText().equals("smile")) {
-			blackboard.setText(blackboard.getText() + "\n" + ":)");
+		else if (commandTextField.getText().equals("time")) {
+			blackboard.setText(blackboard.getText() + "\n" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
 		}
-		else if (commandTextField.getText().startsWith("say ")) {
-			String what = commandTextField.getText().substring(4);
+		else if (commandTextField.getText().startsWith("write ")) {
+			String what = commandTextField.getText().substring(6);
 			blackboard.setText(blackboard.getText() + "\n" + what);
 		}
 		else {
