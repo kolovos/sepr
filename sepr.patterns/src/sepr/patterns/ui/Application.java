@@ -49,23 +49,25 @@ public class Application extends JFrame implements ActionListener {
 	public void executeButtonPressed() {
 		updateStatus("Executing...");
 		
-		if (commandTextField.getText().equals("clear")) {
+		String command = commandTextField.getText();
+		
+		if (command.equals("clear")) {
 			blackboard.setText("");
 		}
-		else if (commandTextField.getText().startsWith("section ")) {
-			String what = commandTextField.getText().substring(8) + "\n" + "---";
-			blackboard.setText(blackboard.getText() + "\n" + what);
+		else if (command.startsWith("section ")) {
+			String newText = command.substring(8) + "\n" + "---";
+			blackboard.setText(blackboard.getText() + "\n" + newText);
 		}
-		else if (commandTextField.getText().startsWith("newline")) {
-			String what = "\n";
-			blackboard.setText(blackboard.getText() + what);
+		else if (command.startsWith("write ")) {
+			String newText = command.substring(6);
+			blackboard.setText(blackboard.getText() + "\n" + newText);
 		}
-		else if (commandTextField.getText().startsWith("write ")) {
-			String what = commandTextField.getText().substring(6);
-			blackboard.setText(blackboard.getText() + "\n" + what);
+		else if (command.startsWith("newline")) {
+			String newText = "\n";
+			blackboard.setText(blackboard.getText() + newText);
 		}
 		else {
-			blackboard.setText(blackboard.getText() + "\n" + "Unknown command: " + commandTextField.getText());
+			blackboard.setText(blackboard.getText() + "\n" + "Unknown command: " + command);
 		}
 
 		updateStatus("");
